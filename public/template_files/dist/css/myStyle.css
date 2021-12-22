@@ -1,0 +1,726 @@
+        /*general styles*/
+
+        .wrapper {
+            overflow: hidden;
+        }
+
+        .custom-color {
+            background-color: #0b739f !important;
+            color: #fff !important;
+        }
+
+        .for-color {
+            color: #0b739f
+        }
+
+        .bl-1-dark {
+            border-left: 1px solid black;
+        }
+
+        .horizontal-scroll {
+            overflow-x: auto;
+        }
+
+        .icon-24 {
+            font-size: 24px;
+        }
+
+        .forms-section {
+            min-height: 80vh;
+        }
+
+        .btn.btn-outline-dark {
+            color: #0b739f !important;
+            border-color: #0b739f !important;
+        }
+
+        .btn.btn-outline-dark:hover {
+            background-color: #0b739f;
+            color: #fff !important;
+        }
+
+        .btn.btn-outline-blue {
+            color: #0b739f;
+            border-color: #0b739f;
+        }
+
+        .btn.btn-outline-blue:hover {
+            background-color: #0b739f;
+            color: #fff;
+        }
+
+        .btn.btn-outline-dark,
+        .btn.btn-outline-blue,
+        .btn.btn-outline-danger {
+            font-size: 1.1rem !important;
+            border-radius: .25rem !important;
+        }
+        /* data tables buttons (print, excel and delete)*/
+
+        .btn_size {
+            padding: 2px 9px;
+            margin-bottom: 1rem;
+        }
+
+        .btn_size i {
+            font-size: 24px;
+        }
+        /* columns icon */
+
+        .columns-icon {
+            padding: 0.29rem 0px;
+        }
+        /* excel icon    */
+
+        .excel-btn-img {
+            width: 64%;
+        }
+
+        .excel-btn {
+            padding: 3px 0px;
+        }
+
+        .excel-btn:hover {
+            background-color: #fff !important;
+        }
+
+        .excel-btn:hover .excel-btn-img {
+            content: url("../img/icons/export-excel-blue.png");
+        }
+
+        @media (max-width: 767px) {
+            .sign-content h5 {
+                font-size: 40px;
+            }
+            #excelImg {
+                width: 100% !important;
+            }
+        }
+        /*File upload*/
+
+        .profilePic input[type="file"] {
+            position: fixed;
+            z-index: 100;
+            right: 100%;
+            bottom: 100%;
+            overflow: hidden;
+        }
+
+        .profilePic .custom-file-upload {
+            border: 1px solid #0b739f;
+            display: inline-block;
+            text-align: center;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .profilePic .custom-file-upload .upload-button {
+            background-color: #fff;
+            position: absolute;
+            top: 70%;
+            left: 80%;
+            z-index: 107;
+            color: #0b739f;
+            cursor: pointer;
+        }
+        /*Tabs*/
+
+        .nav-tabs .nav-link {
+            color: #495057;
+        }
+
+        .card-header .nav.nav-tabs {
+            border-bottom-color: #0b739f;
+        }
+
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            color: #0b739f;
+            border-color: #0b739f #0b739f #fff;
+        }
+        /* Main navbar*/
+
+        .navbar-nav h3.card-title {
+            width: 100%;
+        }
+        /* Main Side menu (aside) Container */
+
+        .logo-abbr {
+            max-width: 65px;
+            height: 100%;
+            margin-right: 15px;
+        }
+
+        .logo-title {
+            color: #fff;
+            max-width: 130px;
+            margin-right: 20px;
+            letter-spacing: .2rem;
+            font-size: 2.25rem;
+        }
+
+        .logo-link {
+            display: flex;
+            height: 55px;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo-link:hover,
+        .btn-anchor {
+            text-decoration: none;
+        }
+        /*---------printing work modals---------- */
+
+        .print-working-modal {
+            position: absolute;
+            top: 0px;
+            left: 3px;
+        }
+
+        .signature {
+            position: relative;
+        }
+
+        .signature+span {
+            width: 100px;
+            text-align: center;
+            margin: auto;
+            position: absolute;
+            bottom: -10px;
+        }
+        /*vacations' types : edit vacation alert*/
+
+        #alert-header.alert {
+            background-color: #f8d7da;
+            color: #842029;
+            border-color: #f5c2c7;
+        }
+        /*privacy and policy horizontal line style*/
+
+        .thin-hr {
+            background-color: #000;
+            height: 1px;
+            position: relative;
+            width: 25%;
+        }
+        /*validation messages*/
+
+        .select-error,
+        .input-border-error {
+            border: 1px #dc3545 solid !important;
+            border-radius: .25rem !important;
+        }
+
+        .error-msgs p,
+        .error-text {
+            color: #dc3545;
+            font-size: 80%;
+            width: 100%
+        }
+        /*----------Custome file upload----------------*/
+
+        .customed-file-input {
+            padding: 0px !important;
+        }
+
+        .customed-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .customed-file-input::before {
+            content: "اختار المسار";
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 8px 25px;
+            cursor: pointer;
+        }
+        /*login style*/
+
+        .login-card-body #txtPassword {
+            position: relative;
+        }
+
+        .login-card-body #showPassword {
+            position: absolute;
+            left: 10px;
+            top: 30%;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        .login-card-body #btn_freeTrial {
+            border: none;
+            background-color: transparent;
+            color: #007bff;
+        }
+        /* Home style*/
+
+        .light-content {
+            background-color: #fff !important;
+            padding: 1.25rem 0px !important;
+        }
+
+        .card-title .nav-link {
+            height: 1.5rem;
+        }
+
+        #home-main-img {
+            width: 17vw;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #home-main-img {
+                width: 60vw;
+            }
+            /* side menu*/
+            .sidebar {
+                height: calc(100% - 7rem) !important;
+            }
+        }
+        /*Home : timer*/
+
+        #timer {
+            align-items: center;
+            background-image: url(../img/parallax-counters.jpg);
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 30px 0px;
+            color: #fff;
+        }
+
+        #timer .counter,
+        #timer .title h2 {
+            color: #fff;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .time-unit {
+            display: inline-block;
+            list-style-type: none;
+            font-size: 18px;
+            padding: 1em 2em;
+        }
+
+        .time-unit span {
+            color: #fff;
+            display: block;
+            font-size: 2rem;
+        }
+
+        #counter-msg {
+            display: none;
+        }
+        /*Home : about us section*/
+
+        #aboutUs {
+            background-color: #f4f6f9 !important;
+        }
+
+        #aboutUs .title {
+            padding: 0px 3rem;
+        }
+
+        @media (max-width: 800px) {
+            .time-unit {
+                padding: 0.7em 1.7em;
+            }
+            .time-unit span {
+                font-size: 1.7rem;
+            }
+            #aboutUs .title {
+                padding: 0px 2.7rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .time-unit {
+                padding: 0.5em 1.5em;
+            }
+            .time-unit span {
+                font-size: 1.5rem;
+            }
+            #aboutUs .title {
+                padding: 0px 2.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .time-unit {
+                padding: 0.5em 1em;
+            }
+            .time-unit span {
+                font-size: 1.2rem;
+            }
+            #aboutUs .title {
+                padding: 0px 2rem;
+            }
+        }
+        /*footer FAQ link*/
+
+        #faqLink {
+            border-left: 1px #0b739f solid;
+        }
+        /* rewards hidden input*/
+
+        #rewardedDays {
+            display: none;
+        }
+        /*Prints & QA : Collapsable cards*/
+
+        .card-top-dark {
+            border-top: 3px solid #343a40;
+            margin-bottom: 0px;
+        }
+
+        .card-top-dark .card-header,
+        .card-top-info .card-header {
+            background-color: #fff;
+        }
+
+        .card-top-dark .card-header .card-tools {
+            margin-top: -11px;
+        }
+
+        .card-top-dark .card-header .card-tools a,
+        .card-top-dark .card-body .card-tools a {
+            padding: 11px;
+            color: black;
+        }
+
+        .card-top-info .card-header .card-tools button i {
+            color: #17a2b8;
+        }
+        /* data tables cells sizes in all screens*/
+
+        .medium-td {
+            min-width: 91px;
+        }
+        .large-screen-td {
+            min-width: 200px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .small-td {
+                max-width: 40px;
+            }
+            .medium-td {
+                min-width: 140px;
+            }
+            .large-td {
+                min-width: 200px;
+            }
+        }
+
+        .select2-container--default {
+            width: 100% !important;
+        }
+
+        .select2-selection--single {
+            height: 40px !important;
+        }
+        /*right search part with hidden inputs */
+
+        #advancedSearch button {
+            border-top-left-radius: 25px !important;
+            border-bottom-left-radius: 25px !important;
+        }
+
+        .hidden-div {
+            width: 49%;
+            display: none;
+        }
+        /*--- facebook and whatsapp icons ---*/
+
+        .socialMedia {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-bottom: 6px;
+        }
+        /*branches and departments status*/
+
+        .color-palette {
+            height: 40px;
+            line-height: 35px;
+            text-align: right;
+            padding-right: .75rem;
+        }
+
+        .color-palette-set {
+            margin-bottom: 15px;
+        }
+
+        .color-palette-box h6 {
+            position: absolute;
+            right: 1.25rem;
+            margin-top: .4rem;
+            color: #1f2d3d!important;
+            display: block;
+            z-index: 7;
+        }
+
+        .color-palette .controls,
+        .callout .controls {
+            position: absolute;
+            left: 0.75rem;
+            color: #1f2d3d!important;
+            display: block;
+            z-index: 7;
+        }
+
+        .callout a:hover {
+            color: #1f2d3d!important;
+        }
+
+        .callout .controls {
+            top: 10px;
+        }
+
+        .color-palette .controls i,
+        .callout .controls i {
+            font-size: 20px;
+        }
+
+        .callout.callout-info {
+            border-left: none;
+            border-right-color: #0b739f;
+        }
+
+        .callout {
+            border-right: 5px solid #e9ecef;
+        }
+        /*overwriting the project colors*/
+
+        [class*=sidebar-dark-] {
+            background-color: #0b739f;
+        }
+
+        [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link,
+        .main-header .nav-link i,
+        .card-title .nav-link {
+            color: #fff;
+        }
+        /*------------tooltip styling---------------------*/
+
+        .toolTip {
+            position: relative;
+        }
+        /* Tooltip text */
+
+        .toolTip .toolTiptext {
+            visibility: hidden;
+            background-color: #0b739f;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            width: 350%;
+        }
+
+        .topToolTip {
+            bottom: 100%;
+            left: 50%;
+            margin-left: -9%;
+        }
+
+        .bottomToolTip {
+            top: 100%;
+            left: 0%;
+        }
+
+        .toolTip:hover .toolTiptext {
+            visibility: visible;
+        }
+
+        .toolTiptext a:hover {
+            color: #fff;
+        }
+        /* multi select*/
+
+        .multipleSelection {
+            display: inline;
+            position: relative;
+        }
+
+        .selectBox {
+            position: relative;
+            display: inline;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .checkBoxes {
+            position: absolute;
+            display: none;
+            background-color: #FFFFFF;
+            border: 1px solid #ced4da;
+            border-radius: 3px;
+            padding: 2px 24px 2px 2px;
+            width: 120px;
+            right: -90%;
+            top: 2.1rem;
+            z-index: 1;
+        }
+
+        .checkBoxes-wider {
+            width: 170px;
+            height: 300px;
+            overflow-y: auto;
+            right: -110%;
+            top: 2rem
+        }
+
+        .checkBoxes::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 42%;
+            width: 14px;
+            height: 8px;
+            background-color: #fff;
+            border-left: 2px solid #ced4da;
+            transform: skew(-45deg)
+        }
+
+        .checkBoxes::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 48%;
+            width: 1px;
+            height: 8px;
+            background-color: #fff;
+            border-right: 2px solid #ced4da;
+            transform: skew(45deg)
+        }
+
+        .checkBoxes label {
+            display: block;
+        }
+        /* multi select branches*/
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            color: #000;
+        }
+        /*search bar in employee profile and company insurance history*/
+
+        .side-search {
+            position: fixed;
+            left: -430px;
+            top: 7.75rem;
+            z-index: 200;
+            display: inline-block;
+            background-color: #fff !important;
+            border-radius: 0px 5px 5px 0;
+            box-shadow: 4px 4px 5px 0px rgb(119 119 119 / 15%);
+            -webkit-transition: 0.4s;
+            -moz-transition: 0.4s;
+            -ms-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.5s;
+        }
+
+        .side-search-toggled {
+            left: 30px !important;
+            -webkit-transition: 0.4s;
+            -moz-transition: 0.4s;
+            -ms-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.5s;
+        }
+
+        #serch-one-input {
+            left: -249px;
+            top: 5rem
+        }
+
+        .search-icon {
+            padding: 10px;
+            background-color: #0b739f !important;
+            color: #fff !important;
+            text-align: center;
+            display: inline-block;
+            border-radius: 0px 5px 5px 0;
+            position: fixed;
+            left: 0px;
+            top: 7.75rem;
+            z-index: 205;
+        }
+
+        #serch-one-input .search-icon {
+            top: 5rem;
+        }
+
+        .search-bar {
+            display: inline-block;
+            width: 425px;
+        }
+
+        .search-bar-2 {
+            display: inline-block;
+            width: 245px;
+        }
+
+        .search-bar .input-div,
+        .search-bar-2 .input-div {
+            width: 180px;
+        }
+
+        .search-bar .btn-div,
+        .search-bar-2 .btn-div {
+            width: 60px;
+        }
+
+        .search-bar .btn-div button,
+        .search-bar-2 .btn-div button {
+            padding: .315rem .5rem;
+            background-color: #0b739f;
+            color: #fff;
+        }
+
+        @media (max-width: 767px) {
+            .side-search {
+                left: -89vw;
+            }
+            .search-bar {
+                width: 87vw;
+            }
+            .search-bar .input-div {
+                width: 35vw;
+            }
+            .search-bar .btn-div {
+                width: 15vw;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .side-search {
+                left: -86vw;
+            }
+            .search-bar {
+                width: 84vw;
+            }
+            .search-bar .input-div {
+                width: 32vw;
+            }
+            .search-bar .btn-div {
+                width: 20vw;
+            }
+        }
