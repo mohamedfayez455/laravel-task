@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('template_files/dist/css/adminlte.min.css')}}">
+    <!--  noty  -->
+    <link rel="stylesheet" href="{{ asset('template_files/plugins/noty/noty.css') }}">
+    <script src="{{ asset('template_files/plugins/noty/noty.min.js') }}"></script>
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#da532c">
@@ -29,19 +32,8 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">@lang('admin.sign_in_to_start_your_session')</p>
-
-            @if (session('error'))
-                <script>
-                    new Noty({
-                        type: 'error',
-                        layout: 'topRight',
-                        text: "{{ session('error') }}",
-                        timeout: 2000,
-                        killer: true
-                    }).show();
-                </script>
-            @endif
-
+            <!--    include redirection message file    -->
+            @include('includes.message')
             <form action="{{route('login')}}" method="post">
                 @csrf
                 @method('POST')
@@ -87,8 +79,8 @@
 
             <div class="social-auth-links text-center mb-3">
                 <p>- @lang('admin.or') -</p>
-                <a href="#" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i> @lang('admin.sign_in_using_google')
+                <a href="{{route('google.auth-redirect')}}" class="btn btn-block btn-danger">
+                    @lang('admin.sign_in_using_google') <i class="fab fa-google-plus mr-2"></i>
                 </a>
             </div>
         </div>

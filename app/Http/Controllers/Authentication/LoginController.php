@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Authentication;
 
 use App\Http\Requests\LoginRequest;
 
@@ -19,7 +19,7 @@ class LoginController
         if(auth()->attempt(['email' => request('email'), 'password' => request('password')],$remember)){
             return redirect()->route('home')->with('success' , trans('admin.login_successfully'));
         }
-        return redirect()->route('admin.login')->with('error' , trans('admin.please_check_data'));
+        return redirect()->route('login')->with('error' , trans('admin.please_check_data'));
     }
 
 }

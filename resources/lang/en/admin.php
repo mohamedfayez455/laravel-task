@@ -16,7 +16,9 @@ return [
     'login_successfully' =>  'Login Successfully',
     'please_check_data' =>  'Please Check Data',
     'signed_in_earlier' =>  'Signed In Earlier',
-    'sign_in_using_google' =>  'Sign in using Google+',
+    'sign_in_using_google' =>  'Sign in using Google +',
+    'try_again' =>  'Try Again',
+    'come_back_soon' =>  'Come Back Soon',
 
     // header of pages
     'laravel_task' =>  'Laravel Task',
