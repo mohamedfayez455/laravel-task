@@ -1,7 +1,8 @@
-
+<!-- Main Footer -->
 <footer class="main-footer">
-    <a id="page-up"><i class="fas fa-chevron-circle-up"></i></a>
-    <strong class="text-right pr-2 d-none d-sm-inline-block">حقوق النشر &copy; <span id="currentYear"></span>-2019 محفوظة لدى
-        <a target="_blank" href="https://blue-egypt.com/ar">بلو تكنولوجى</a>
-        .</strong>
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.0.0-rc.1
+    </div>
 </footer>

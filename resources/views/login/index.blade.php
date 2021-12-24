@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LogIn</title>
+    <title>@lang('admin.Login')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -12,15 +12,8 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('template_files/dist/css/adminlte.min.css')}}">
-    <!-- my style -->
-    <link rel="stylesheet" href="{{asset('template_files/dist/css/myStyle.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('template_files/dist/img/icons/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('template_files/dist/img/icons/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('template_files/dist/img/icons/favicon-16x16.png')}}">
-    <link rel="manifest" href="{{asset('template_files/dist/img/icons/site.webmanifest')}}">
-    <link rel="mask-icon" href="{{asset('template_files/dist/img/icons/safari-pinned-tab.svg')}}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="{{ asset('template_files/plugins/noty/noty.css') }}">
@@ -30,12 +23,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b> Log </b> In </a>
+        <a href="#"><b> @lang('admin.log') </b> @lang('admin.in') </a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">@lang('admin.sign_in_to_start_your_session')</p>
 
             @if (session('error'))
                 <script>
@@ -53,7 +46,7 @@
                 @csrf
                 @method('POST')
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{old('email')}}" placeholder="Email">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{old('email')}}" placeholder="@lang('admin.email')">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -64,9 +57,10 @@
                     @enderror
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                    <input type="password" name="password" id="txtPassword"  autocomplete="false" class="form-control @error('password') is-invalid @enderror" placeholder="@lang('admin.password')">
                     <div class="input-group-append">
                         <div class="input-group-text">
+                            <i class="far fa-eye m-1" id="showPassword"></i>
                             <span class="fas fa-lock"></span>
                         </div>
                     </div>
@@ -79,22 +73,22 @@
                         <div class="icheck-primary">
                             <input type="checkbox" name="remember" value="1" {{old('remember') == 1 ? 'checked' : ''}} id="remember">
                             <label for="remember">
-                                Remember Me
+                                @lang('admin.remember_me')
                             </label>
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('admin.sign_in')</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
             <div class="social-auth-links text-center mb-3">
-                <p>- OR -</p>
+                <p>- @lang('admin.or') -</p>
                 <a href="#" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    <i class="fab fa-google-plus mr-2"></i> @lang('admin.sign_in_using_google')
                 </a>
             </div>
         </div>

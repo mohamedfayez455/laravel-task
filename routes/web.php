@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//language prefix route
+Route::group([ 'prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
+
 // login
-Route::group(['middleware' => 'IsGuest'],function(){
-    Route::get('/login',[App\Http\Controllers\LoginController::class, 'getLogin'])->name('login');
-    Route::post('/login',[App\Http\Controllers\LoginController::class, 'postLogin'])->name('login');
-});
+    Route::group(['middleware' => 'IsGuest'],function(){
+        Route::get('/login',[App\Http\Controllers\LoginController::class, 'getLogin'])->name('login');
+        Route::post('/login',[App\Http\Controllers\LoginController::class, 'postLogin'])->name('login');
+    });
 
-Route::group(['middleware' => 'auth'],function(){
+    Route::group(['middleware' => 'auth'],function(){
 
-    // logout
-    Route::any('/logout',[App\Http\Controllers\LogoutController::class, 'logout'])->name('logout');
+        // logout
+        Route::any('/logout',[App\Http\Controllers\LogoutController::class, 'logout'])->name('logout');
 
-    // home
-    Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        // home
+        Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    //posts
-    Route::resource('/posts',App\Http\Controllers\PostsController::class);
+        //posts
+        Route::resource('/posts',App\Http\Controllers\PostsController::class);
+
+    });
+
 
 });

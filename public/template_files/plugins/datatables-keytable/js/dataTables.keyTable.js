@@ -251,7 +251,7 @@ $.extend( KeyTable.prototype, {
 				that._editor( key, orig, false );
 			} );
 
-			// ActiveDomain editing on double click - it will already have focus from
+			// Active editing on double click - it will already have focus from
 			// the click event handler above
 			$( dt.table().body() ).on( 'dblclick.keyTable', 'th, td', function (e) {
 				if ( that.s.enable === false ) {
@@ -610,7 +610,7 @@ $.extend( KeyTable.prototype, {
 				.rows( { filter: 'applied', order: 'applied' } )
 				.indexes()
 				.indexOf( index.row );
-
+			
 			// Don't focus rows that were filtered out.
 			if ( row < 0 ) {
 				return;

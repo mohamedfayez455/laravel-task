@@ -17,9 +17,9 @@ class LoginController
         $request->validated();
         $remember = request('remember') == 1;
         if(auth()->attempt(['email' => request('email'), 'password' => request('password')],$remember)){
-            return redirect()->route('home')->with('success' , "تم تسجيل الدخول بنجاح");
+            return redirect()->route('home')->with('success' , trans('admin.login_successfully'));
         }
-        return redirect()->route('admin.login')->with('error' , "برجاء التاكد من صحة البيانات");
+        return redirect()->route('admin.login')->with('error' , trans('admin.please_check_data'));
     }
 
 }

@@ -20,6 +20,6 @@ class IsGuest
         if ( ! Auth::guard('web')->check()) {
             return $next($request);
         }
-        return redirect()->route('dashboard.index')->with('info','تم تسجيل الدخول في وقت سابق');
+        return redirect()->route('home')->with('info', trans('admin.signed_in_earlier'));
     }
 }

@@ -1,5 +1,4 @@
 @if (session('success'))
-
     <script>
         new Noty({
             type: 'success',
@@ -9,10 +8,9 @@
             killer: true
         }).show();
     </script>
-
 @endif
-@if (session('info'))
 
+@if (session('info'))
     <script>
         new Noty({
             type: 'info',
@@ -22,11 +20,9 @@
             killer: true
         }).show();
     </script>
-
 @endif
 
 @if (session('error'))
-
     <script>
         new Noty({
             type: 'error',
@@ -36,6 +32,4 @@
             killer: true
         }).show();
     </script>
-
 @endif
-
