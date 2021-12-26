@@ -1,0 +1,115 @@
+
+.wrapper {
+    overflow: hidden;
+}
+
+.bl-1-dark {
+    border-left: 1px solid black;
+}
+
+.horizontal-scroll {
+    overflow-x: auto;
+}
+
+.icon-24 {
+    font-size: 24px;
+}
+
+.forms-section {
+    min-height: 80vh;
+}
+.btn.btn-outline-dark {
+    color: #0b739f !important;
+    border-color: #0b739f !important;
+}
+
+.btn.btn-outline-dark:hover {
+    background-color: #0b739f;
+    color: #fff !important;
+}
+
+.btn.btn-outline-blue {
+    color: #0b739f;
+    border-color: #0b739f;
+}
+
+.btn.btn-outline-blue:hover {
+    background-color: #0b739f;
+    color: #fff;
+}
+
+.btn.btn-outline-dark,
+.btn.btn-outline-blue,
+.btn.btn-outline-danger {
+    font-size: 1.1rem !important;
+    border-radius: .25rem !important;
+}
+/* data tables buttons (print, excel and delete)*/
+
+.btn_size {
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+}
+
+.btn_size i {
+    font-size: 24px;
+}
+/* columns icon */
+
+.columns-icon {
+    padding: 0.29rem 0px;
+}
+/* excel icon    */
+.excel-btn-img {
+    width: 64%;
+}
+
+.excel-btn {
+    padding: 3px 0;
+}
+
+.excel-btn:hover {
+    background-color: #fff !important;
+}
+
+.excel-btn:hover .excel-btn-img {
+    content: url("../img/icons/export-excel-blue.png");
+}
+
+@media (max-width: 767px) {
+    .sign-content h5 {
+        font-size: 40px;
+    }
+    #excelImg {
+        width: 100% !important;
+    }
+}
+
+
+/*  datatable for mobile    */
+@media only screen and (max-width: 600px) {
+    .small-td {
+        max-width: 40px;
+    }
+    .medium-td {
+        min-width: 140px;
+    }
+    .large-td {
+        min-width: 300px;
+    }
+}
+
+/* dropzoneDragArea */
+.dropzoneDragArea {
+    background-color: #fbfdff;
+    border: 1px dashed #c0ccda;
+    border-radius: 6px;
+    padding: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.dropzone{
+    box-shadow: 0 2px 20px 0 #f2f2f2;
+    border-radius: 10px;
+}

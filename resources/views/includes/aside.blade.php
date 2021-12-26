@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="" class="brand-link">
+    <a href="{{route('home')}}" class="brand-link">
         <img src="{{asset('template_files/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -23,8 +23,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="{{route('posts.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
                         <p>
                             @lang('admin.posts')
                         </p>
@@ -33,7 +33,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('logout')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             @lang('admin.logout')
                         </p>

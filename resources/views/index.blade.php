@@ -16,8 +16,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @include('includes.message')
-
-        @yield('content')
+            @yield('content')
     </div>
     <!-- /.content-wrapper -->
 

@@ -28,10 +28,12 @@ class GoogleAuthController extends Controller
     {
         try {
             $social_user = Socialite::driver('google')->user();
+            // First we check if the user has used Google before to log in, we make him a login user immediately
             $user = User::where('google_id', $social_user->id)->first();
             if ($user) {
                 Auth::login($user);
             } else {
+                // else add the user to the database and make it a login user
                 $created_user = $this->userRepository->storeUser($social_user);
                 Auth::login($created_user);
             }

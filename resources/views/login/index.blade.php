@@ -97,7 +97,7 @@
     $("#showPassword").click(() => {
         $("#showPassword").toggleClass("fas fa-eye-slash");
         $('#txtPassword').attr('type', function(index, attr) {
-            return attr == 'password' ? 'text' : 'password';
+            return attr === 'password' ? 'text' : 'password';
         });
     })
 </script>
