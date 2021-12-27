@@ -34,10 +34,12 @@ Route::group([ 'prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'l
         // home
         Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
         //posts
-        Route::resource('/posts',App\Http\Controllers\PostsController::class);
+        Route::resource('/posts',App\Http\Controllers\PostsController::class)->except('show');
         Route::delete('/posts/destroy/selected-rows',[App\Http\Controllers\PostsController::class, 'deleteSelectedRows'])->name('posts.destroy.selected-rows');
         // posts attachments
         Route::post('/posts-files/store',[App\Http\Controllers\AttachmentsController::class, 'store'])->name('posts-files.store');
         Route::post('/posts-files/destroy',[App\Http\Controllers\AttachmentsController::class, 'destroy'])->name('posts-files.destroy');
+        // for invalid url
+        Route::fallback(App\Http\Controllers\FallBackController::class);
     });
 });

@@ -83,6 +83,8 @@ return [
     'added_successfully' => 'Added successfully',
     'new_posts' => 'New posts',
     'more_info' => 'More Info',
+    'invalid_url' => 'You entered the wrong link',
+    'go_to_home' => 'Go to home',
 
 
 ];
