@@ -76,6 +76,8 @@ return [
     'deleted_successfully' => 'تم الحذف بنجاح',
     'deleted_all_successfully' => 'تم حذف الجميع بنجاح',
     'added_successfully' => 'تم الاضافة بنجاح',
+    'new_posts' => 'اخر المقالات',
+    'more_info' => 'للمزيد من التفاصيل',
 
 
 //    'or' =>  'OR',

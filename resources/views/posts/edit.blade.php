@@ -68,7 +68,7 @@
                 @foreach($post->attachments as $attachment)
                     var attachmentObject = {name:"{{$attachment->file}}", id:"{{$attachment->id}}"};
                     this.emit('addedfile', attachmentObject);
-                    this.options.thumbnail.call(this, attachmentObject, "{{asset('uploads/posts/'.$attachment->file)}}")
+                    this.options.thumbnail.call(this, attachmentObject, "{{$attachment->file_path}}")
                 @endforeach
 
                 // sending post id in dropzone submission form

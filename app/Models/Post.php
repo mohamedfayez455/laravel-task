@@ -20,4 +20,5 @@ class Post extends Model
         return $this->hasMany(Attachment::class);
     }
 
+
 }

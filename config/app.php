@@ -169,6 +169,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\HtmlServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -234,7 +235,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
 
     ],
 

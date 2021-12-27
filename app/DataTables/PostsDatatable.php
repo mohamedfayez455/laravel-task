@@ -15,7 +15,17 @@ class PostsDatatable extends DataTable
             ->setRowId('id')
             ->addIndexColumn()
             ->addColumn('created_at', function (Post $post){ return Carbon::parse($post->created_at)->isoFormat('Do MMMM YYYY');})
-            ->addColumn('attachments', 'posts.btn.attachments')
+            ->addColumn('attachments', function (Post $post){
+                $data = '';
+                foreach($post->attachments as $attachment){
+                    $data .= '
+                    <a href="'.$attachment->file_path.'" data-lity>
+                        <img src="'.$attachment->file_path.'"  style="width: 100px; height: 85px;" class="img-thumbnail">
+                    </a>';
+                }
+                return $data;
+            })
+//            ->addColumn('attachments', 'posts.btn.attachments')
             ->addColumn('checkbox', 'posts.btn.checkbox')
             ->addColumn('edit', 'posts.btn.edit')
             ->addColumn('delete', 'posts.btn.delete')
@@ -29,8 +39,7 @@ class PostsDatatable extends DataTable
     }
     public function query(): \Illuminate\Database\Eloquent\Builder
     {
-//        return Post::with('attachments')->select('posts.*');
-        return Post::query();
+        return Post::with('attachments');
     }
 
 

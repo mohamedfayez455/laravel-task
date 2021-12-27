@@ -81,6 +81,8 @@ return [
     'deleted_successfully' => 'Deleted Successfully',
     'deleted_all_successfully' => 'Deleted all successfully',
     'added_successfully' => 'Added successfully',
+    'new_posts' => 'New posts',
+    'more_info' => 'More Info',
 
 
 ];
