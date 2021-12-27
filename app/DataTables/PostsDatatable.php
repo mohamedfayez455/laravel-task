@@ -25,7 +25,6 @@ class PostsDatatable extends DataTable
                 }
                 return $data;
             })
-//            ->addColumn('attachments', 'posts.btn.attachments')
             ->addColumn('checkbox', 'posts.btn.checkbox')
             ->addColumn('edit', 'posts.btn.edit')
             ->addColumn('delete', 'posts.btn.delete')
