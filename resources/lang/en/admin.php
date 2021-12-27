@@ -85,6 +85,14 @@ return [
     'more_info' => 'More Info',
     'invalid_url' => 'You entered the wrong link',
     'go_to_home' => 'Go to home',
+    'attachments_required' => 'Please insert post attachment',
+    'file' => 'File required',
+    'file_attachment' => 'The attachment',
+    'attachments_is_invalid' => 'The attachment is invalid',
+    'attachment_is_required' => 'The attachment is required',
+    'attachment_mime' => 'The attachment must be end with (jpg - jpeg - png)',
+    'attachment_max' => 'The Max size for attachment is 5MP',
+    'attachment_image' => 'The attachment must be image',
 
 
 ];

@@ -31,7 +31,8 @@
                                             <!--     hidden field to hold a value of post id after creating it -->
                                         <input type="hidden" name="post_id" id="postID">
                                     </div>
-
+                                    <!--    this div for dropzone validation length     -->
+                                    <div id="dropzoneLengthValidation" class="invalid-feedback d-block"></div>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
@@ -83,42 +84,51 @@
             window.location.href = '{{ route('posts.index') }}'
         });
 
-
-        // submit add post form for insert post in database and return post id to used in dropzone
-        $("#addPostForm").submit(function (e){
-            // prevent default of form submission to prevent page reload
-            e.preventDefault();
-                // send ajax request to insert form data in database
-            $.ajax({
-                url: "{{ route('posts.store') }}",
-                type: "POST",
-                container: '#addPostForm',
-                data: $('#addPostForm').serialize(),
-                // on success after data inserted in database send post id to hidden input and start Dropzone processQueue
-                success: function(data) {
-                    if (myDropzone.getQueuedFiles().length > 0) {
-                        $('#postID').val(data.post_id);
-                        myDropzone.processQueue();
-                    }
-                },
-                // on error of added post data in database return error validation message
-                error: function(xhr, status, error) {
-                    // get response error message and append it in form inputs
-                    let errorMessage = xhr.responseJSON.errors;
-                    document.querySelectorAll("#addPostForm input,textarea").forEach(function(input) {
-                        if (input.name in errorMessage) {
-                            input.classList.add("is-invalid");
-                            input.classList.add("input-border-error");
-                            if (input.parentElement.lastChild.nodeName !== "DIV") {
-                                for (let i = 0; i < errorMessage[input.name].length; i++) {
-                                    input.parentElement.insertAdjacentHTML('beforeend', `<div class="invalid-feedback d-block">${errorMessage[input.name][i]}</div>`);
+            // submit add post form for insert post in database and return post id to used in dropzone
+            $("#addPostForm").submit(function (e){
+                // prevent default of form submission to prevent page reload
+                e.preventDefault();
+                // check for dropzone length
+                $("#dropzoneLengthValidation").empty();
+                if (myDropzone.getRejectedFiles().length !== 0) {
+                    // send ajax request to insert form data in database
+                    $.ajax({
+                    url: "{{ route('posts.store') }}",
+                    type: "POST",
+                    container: '#addPostForm',
+                    data: $('#addPostForm').serialize(),
+                    // on success after data inserted in database send post id to hidden input and start Dropzone processQueue
+                    success: function(data) {
+                        if (myDropzone.getQueuedFiles().length > 0) {
+                            $('#postID').val(data.post_id);
+                            myDropzone.processQueue();
+                        }
+                    },
+                    // on error of added post data in database return error validation message
+                    error: function(xhr, status, error) {
+                        // get response error message and append it in form inputs
+                        let errorMessage = xhr.responseJSON.errors;
+                        document.querySelectorAll("#addPostForm input,textarea").forEach(function(input) {
+                            if (input.name in errorMessage) {
+                                input.classList.add("is-invalid");
+                                input.classList.add("input-border-error");
+                                if (input.parentElement.lastChild.nodeName !== "DIV") {
+                                    for (let i = 0; i < errorMessage[input.name].length; i++) {
+                                        input.parentElement.insertAdjacentHTML('beforeend', `<div class="invalid-feedback d-block">${errorMessage[input.name][i]}</div>`);
+                                    }
                                 }
                             }
-                        }
-                    })
+                        })
+                    }
+                });
+                } else {
+                    $("#dropzoneLengthValidation").append("@lang('admin.attachments_required')");
                 }
+
+
             });
-        });
+
+
 
     </script>
 @endpush

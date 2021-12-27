@@ -80,6 +80,14 @@ return [
     'more_info' => 'للمزيد من التفاصيل',
     'invalid_url' => 'هذا الرابط غير صحيح',
     'go_to_home' => 'العودة الي الرئيسية',
+    'attachments_required' => 'من فضلك اختار مرفقات المقال',
+    'file' => 'المرفقات',
+    'file_attachment' => 'المرفق',
+    'attachments_is_invalid' => 'المرفق غير صحيح',
+    'attachment_is_required' => 'المرفق مطلوب',
+    'attachment_mime' => 'المرفق يجب ان ينتهي ب (jpg - png - jpeg)',
+    'attachment_max' => 'حجم المرفق يجب ان لا يتعدي ال 5 ميجا بايت',
+    'attachment_image' => 'المرفق يجب ان يكون صورة ',
 
 //    'or' =>  'OR',
 

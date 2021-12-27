@@ -20,9 +20,11 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    public function store(PostRequest $request): \Illuminate\Http\JsonResponse
+    public function store(PostRequest $request)
     {
+//        dd(request()->all());
         $post = Post::create($request->validated());
+//        return redirect()->route('posts.index')->with('success' , trans('admin.added_successfully'));
         return response()->json(['success' => 'post added', 'post_id' => $post->id]);
     }
 

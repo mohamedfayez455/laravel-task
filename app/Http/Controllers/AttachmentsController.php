@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AttachmentRequest;
 use App\Models\Attachment;
-use Illuminate\Http\Request;
+use App\Repositories\AttachmentRepository;
 
 class AttachmentsController extends Controller
 {
 
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(AttachmentRequest $request, AttachmentRepository $attachmentRepository): \Illuminate\Http\RedirectResponse
     {
         if ($request->hasFile('file')) {
             foreach ($request->file as $fileData) {
                 $this->storePhoto($fileData, 'posts');
-                $this->storeAttachment($fileData);
+                $attachmentRepository->storeAttachment($fileData);
             }
         }
         return redirect()->route('posts.index')->with('success' , trans('admin.added_successfully'));
@@ -25,13 +26,6 @@ class AttachmentsController extends Controller
         $this->deletePhoto($attachment->file, 'posts');
         $attachment->delete();
         return redirect()->route('posts.index')->with('success' , trans('admin.deleted_successfully'));
-    }
-
-    public function storeAttachment($fileData){
-        return Attachment::create([
-            'file' => $fileData->hashName(),
-            'post_id' => \request('post_id'),
-        ]);
     }
 
 }
