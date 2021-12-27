@@ -90,7 +90,7 @@
                 e.preventDefault();
                 // check for dropzone length
                 $("#dropzoneLengthValidation").empty();
-                if (myDropzone.getRejectedFiles().length !== 0) {
+                if (myDropzone.files.length !== 0) {
                     // send ajax request to insert form data in database
                     $.ajax({
                     url: "{{ route('posts.store') }}",
