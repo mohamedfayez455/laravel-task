@@ -8,7 +8,6 @@ use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-
 class GoogleAuthController extends Controller
 {
 

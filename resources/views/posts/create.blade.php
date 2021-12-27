@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 px-0 m-auto">
                     <div class="card card-primary mb-0">
-
+                        <!--    add new post form   -->
                         <form id="addPostForm" role="form" method="post" action="{{route('posts.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
@@ -25,16 +25,13 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    <!--    dropzone for upload multi files    -->
                                     <div class="form-group col-md-12 px-2">
-                                        <div class="dropzone" id="file-upload-dropzone" style="">
-                                            {{ csrf_field() }}
-                                            <div class="fallback">
-                                                <input name="file" type="file" multiple/>
-                                            </div>
-                                            <input name="image_url" id="image_url" type="hidden"/>
-                                        </div>
+                                        <div class="dropzone" id="file-upload-dropzone" style=""></div>
+                                            <!--     hidden field to hold a value of post id after creating it -->
                                         <input type="hidden" name="post_id" id="postID">
                                     </div>
+
                                 </div>
                             </div>
                             <div class="card-footer text-center">
@@ -55,20 +52,19 @@
         Dropzone.autoDiscover = false;
         //Dropzone class
         myDropzone = new Dropzone("div#file-upload-dropzone", {
-            url: "{{ route('posts-files.store') }}",
+            url: "{{ route('posts-files.store') }}", // the url which the Dropzone goes
             headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-            paramName: "file",
+            paramName: "file", // the name that send with url request
             dictDefaultMessage: "@lang("admin.drop_files_here_or_click_to_upload") <br>@lang('admin.selected_files_are_not_actually_uploaded')",
             maxFilesize: 5, // The user is not allowed to upload a file of more than 5 megabytes
             maxFiles: 10, // this mean that the user can't upload more than 10 files in creation form
-            acceptedFiles: "image/*", // The user is not allowed to upload any type of files else images
-            uploadMultiple: true,
-            addRemoveLinks: true,
+            acceptedFiles: "image/jpeg,image/png,image/jpg", // The user is not allowed to upload any type of files else images.jpg or png or jpeg
+            uploadMultiple: true, // this allows to user to select multi photo and upload them
+            addRemoveLinks: true, // This makes the Dropzone add a delete link below the images
             dictRemoveFile: "@lang('admin.remove_file')",
-            autoProcessQueue: false,
             parallelUploads: 10,
+            autoProcessQueue: false,
             init: function () {
-                myDropzone = this;
                 this.on("success", function (file, response) {
                     if (response.status === 'fail') {
                         return;
@@ -82,10 +78,11 @@
             formData.append('post_id', $('#postID').val());
         });
 
-        // go back to posts page after inserting post and attachments
+        // go back to posts index page after inserting post and attachments
         myDropzone.on('completemultiple', function () {
             window.location.href = '{{ route('posts.index') }}'
         });
+
 
         // submit add post form for insert post in database and return post id to used in dropzone
         $("#addPostForm").submit(function (e){
@@ -106,6 +103,7 @@
                 },
                 // on error of added post data in database return error validation message
                 error: function(xhr, status, error) {
+                    // get response error message and append it in form inputs
                     let errorMessage = xhr.responseJSON.errors;
                     document.querySelectorAll("#addPostForm input,textarea").forEach(function(input) {
                         if (input.name in errorMessage) {
@@ -124,9 +122,3 @@
 
     </script>
 @endpush
-
-
-@push('css')
-    <style>
-    </style>
-@endpush()

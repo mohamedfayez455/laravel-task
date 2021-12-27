@@ -68,9 +68,19 @@ return [
     'title_max' => 'The Title Must Be Less Then 255 character',
     'body_min' => 'The Title Must Be More Then 5 character',
     'user_id_exists' => 'The User Is Not Exists',
-    'do_you_really_want_to_delete_the_article' => 'do_you_really_want_to_delete_the_article',
-
-//    'or' =>  'OR',
+    'do_you_really_want_to_delete_the_article' => 'Do you really want to delete this post',
+    'delete_posts' =>  'Delete post',
+    'cansel' =>  'Cansel',
+    'remove_file' =>  'Delete File',
+    'delete_post' =>  'Delete post',
+    'please_select_the_posts_you_want_to_delete' => 'Please select the posts you want to delete',
+    'do_you_really_want_to_delete_a_number' =>  'Do you really want to delete a number ',
+    'post' =>  ' Post',
+    'confirm' =>  'Confirm',
+    'updated_successfully' => 'Updated successfully',
+    'deleted_successfully' => 'Deleted Successfully',
+    'deleted_all_successfully' => 'Deleted all successfully',
+    'added_successfully' => 'Added successfully',
 
 
 ];

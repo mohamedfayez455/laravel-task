@@ -13,10 +13,7 @@ class AttachmentsController extends Controller
         if ($request->hasFile('file')) {
             foreach ($request->file as $fileData) {
                 $this->storePhoto($fileData, 'posts');
-                Attachment::create([
-                    'file' => $fileData->hashName(),
-                    'post_id' => $request->post_id,
-                ]);
+                $this->storeAttachment($fileData);
             }
         }
         return redirect()->route('posts.index')->with('success' , trans('admin.added_successfully'));
@@ -29,4 +26,12 @@ class AttachmentsController extends Controller
         $attachment->delete();
         return redirect()->route('posts.index')->with('success' , trans('admin.deleted_successfully'));
     }
+
+    public function storeAttachment($fileData){
+        return Attachment::create([
+            'file' => $fileData->hashName(),
+            'post_id' => \request('post_id'),
+        ]);
+    }
+
 }

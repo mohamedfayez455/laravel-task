@@ -15,7 +15,6 @@
                 @csrf
                 @method('DELETE')
                 <div class="modal-body">
-{{--                    <p> هل تريد حقًا حذف  {{$title}} !  </p>--}}
                     <p> @lang('admin.do_you_really_want_to_delete_the_article')  </p>
                 </div>
                 <div class="modal-footer">

@@ -6,5 +6,4 @@
     <a href="{{asset('uploads/posts/'.$attachment->file)}}" data-lity>
         <img src="{{asset('uploads/posts/'.$attachment->file)}}" alt="" style="width: 100px; height: 85px;" class="img-thumbnail">
     </a>
-{{--    <img style="width: 100px; height: 80px;" class=" "  alt="">--}}
 @endforeach
