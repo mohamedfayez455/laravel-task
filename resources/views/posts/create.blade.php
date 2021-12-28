@@ -79,15 +79,16 @@
             formData.append('post_id', $('#postID').val());
         });
 
-        // go back to posts index page after inserting post and attachments
+        // go back to post index page after inserting post and attachments
         myDropzone.on('completemultiple', function () {
             window.location.href = '{{ route('posts.index') }}'
         });
 
-            // submit add post form for insert post in database and return post id to used in dropzone
-            $("#addPostForm").submit(function (e){
+        // submit add post form for insert post in database and return post id to used in dropzone
+        $("#addPostForm").submit(function (e){
                 // prevent default of form submission to prevent page reload
                 e.preventDefault();
+
                 // check for dropzone length
                 $("#dropzoneLengthValidation").empty();
                 if (myDropzone.files.length !== 0) {
@@ -124,11 +125,6 @@
                 } else {
                     $("#dropzoneLengthValidation").append("@lang('admin.attachments_required')");
                 }
-
-
             });
-
-
-
     </script>
 @endpush
