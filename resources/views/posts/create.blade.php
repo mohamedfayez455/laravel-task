@@ -11,7 +11,7 @@
                             @csrf
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="form-group col-12 px-2">
+                                    <div class="form-group form-floating col-12 px-2">
                                         <label for="title">@lang('admin.post_title')</label>
                                         <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{old('title')}}" placeholder="@lang('admin.enter_post_title')">
                                         @error('title')
@@ -84,47 +84,71 @@
             window.location.href = '{{ route('posts.index') }}'
         });
 
-        // submit add post form for insert post in database and return post id to used in dropzone
-        $("#addPostForm").submit(function (e){
-                // prevent default of form submission to prevent page reload
-                e.preventDefault();
 
+        //  validate front  for add new post with  && submit form with ajax in submitHandler
+        $("#addPostForm").validate({
+            rules: {
+                "title": {
+                    required: true,
+                },
+            },
+            messages: {
+                "title": {
+                    required: "@lang('admin.title_required')",
+                },
+            },
+            submitHandler: function(form) {
                 // check for dropzone length
                 $("#dropzoneLengthValidation").empty();
                 if (myDropzone.files.length !== 0) {
-                    // send ajax request to insert form data in database
+                    // send ajax request to insert form data in database && return post id to used in dropzone
                     $.ajax({
-                    url: "{{ route('posts.store') }}",
-                    type: "POST",
-                    container: '#addPostForm',
-                    data: $('#addPostForm').serialize(),
-                    // on success after data inserted in database send post id to hidden input and start Dropzone processQueue
-                    success: function(data) {
-                        if (myDropzone.getQueuedFiles().length > 0) {
-                            $('#postID').val(data.post_id);
-                            myDropzone.processQueue();
-                        }
-                    },
-                    // on error of added post data in database return error validation message
-                    error: function(xhr, status, error) {
-                        // get response error message and append it in form inputs
-                        let errorMessage = xhr.responseJSON.errors;
-                        document.querySelectorAll("#addPostForm input,textarea").forEach(function(input) {
-                            if (input.name in errorMessage) {
-                                input.classList.add("is-invalid");
-                                input.classList.add("input-border-error");
-                                if (input.parentElement.lastChild.nodeName !== "DIV") {
-                                    for (let i = 0; i < errorMessage[input.name].length; i++) {
-                                        input.parentElement.insertAdjacentHTML('beforeend', `<div class="invalid-feedback d-block">${errorMessage[input.name][i]}</div>`);
+                        url: "{{ route('posts.store') }}",
+                        type: "POST",
+                        container: '#addPostForm',
+                        data: $('#addPostForm').serialize(),
+                        // on success after data inserted in database send post id to hidden input and start Dropzone processQueue
+                        success: function(data) {
+                            if (myDropzone.getQueuedFiles().length > 0) {
+                                $('#postID').val(data.post_id);
+                                myDropzone.processQueue();
+                            }
+                        },
+                        // on error of added post data in database return error validation message
+                        error: function(xhr, status, error) {
+                            // get response error message and append it in form inputs
+                            let errorMessage = xhr.responseJSON.errors;
+                            document.querySelectorAll("#addPostForm input,textarea").forEach(function(input) {
+                                if (input.name in errorMessage) {
+                                    input.classList.add("is-invalid");
+                                    input.classList.add("input-border-error");
+                                    if (input.parentElement.lastChild.nodeName !== "DIV") {
+                                        for (let i = 0; i < errorMessage[input.name].length; i++) {
+                                            input.parentElement.insertAdjacentHTML('beforeend', `<div class="invalid-feedback d-block">${errorMessage[input.name][i]}</div>`);
+                                        }
                                     }
                                 }
-                            }
-                        })
-                    }
-                });
+                            })
+                        }
+                    });
                 } else {
                     $("#dropzoneLengthValidation").append("@lang('admin.attachments_required')");
                 }
-            });
+            },
+            ignore: [],
+            errorClass: "invalid-feedback animated fadeInUp d-inline-flex",
+            errorElement: "div",
+            errorPlacement: function(error, element) {
+                jQuery(element).parents(".form-group").append(error)
+            },
+            highlight: function(error) {
+                jQuery(error).closest(".form-group").find(".invalid-feedback").remove();
+                jQuery(error).closest(".form-group").removeClass("is-invalid");
+            },
+            success: function(error) {
+                jQuery(error).closest(".form-group").find(".invalid-feedback").remove();
+                jQuery(error).closest(".form-group").removeClass("is-invalid");
+            }
+        });
     </script>
 @endpush
