@@ -90,11 +90,20 @@
             rules: {
                 "title": {
                     required: true,
+                    minlength: 3,
+                    maxlength: 255
+                },"body": {
+                    minlength: 3
                 },
             },
             messages: {
                 "title": {
                     required: "@lang('admin.title_required')",
+                    minlength: "@lang('admin.title_min')",
+                    maxlength: "@lang('admin.title_max')",
+                },
+                "body": {
+                    minlength: "@lang('admin.body_min')",
                 },
             },
             submitHandler: function(form) {
