@@ -4,11 +4,16 @@ namespace  App\Traits;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 trait UploadImages
 {
 
     public function storePhoto($photo, $folder = null){
+        $path = public_path('uploads/'.$folder);
+        if(!File::isDirectory($path)){
+            File::makeDirectory($path, 0777, true, true);
+        }
         Image::make($photo)->save(public_path('uploads/' . $folder .'/' . $photo->hashName()));
     }
 
