@@ -31,7 +31,7 @@
 
 Create a database and add its name to the variable DB_DATABASE
 
-    DB_DATABASE=mega
+    DB_DATABASE=posts
 If your database has username or password you need to add them in the variables
 
     DB_USERNAME=root
@@ -39,13 +39,14 @@ If your database has username or password you need to add them in the variables
 4- open terminal in project folder and write this commands
 
        composer update
+       php artisan key:generate
        php artisan optimize:clear
        php artisan migrate:fresh --seed
-       php artisan serve 
+       php artisan serve --port 8000
 
 5- You can browse the site through this link <a href="http://127.0.0.1:8000/login"> Browse </a>
 
 you can log in with this data to browse posts
 
     email    => user@gmail.com
-    password => 123456 
+    password => 123456
