@@ -18,7 +18,7 @@
                     <p> @lang('admin.do_you_really_want_to_delete_the_article')  </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin.cansel')</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin.cancel')</button>
                     <button type="submit" class="btn btn-outline-danger" >@lang('admin.submit')</button>
                 </div>
             </form>

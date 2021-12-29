@@ -35,10 +35,10 @@
                 </div>
                 <div class="modal-footer">
                     <div class="empty_record " hidden>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin.cansel')</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin.cancel')</button>
                     </div>
                     <div class="not_empty_record " hidden>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin.cansel')</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('admin.cancel')</button>
                         <input type="submit" name="del_all" value="@lang('admin.confirm')" class="btn btn-danger del_all">
                     </div>
                 </div>

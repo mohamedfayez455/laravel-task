@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\File;
 trait UploadImages
 {
 
-    public function storePhoto($photo, $folder = null){
+    public function storePhoto($photo, $folder = null)
+    {
         $path = public_path('uploads/'.$folder);
         if(!File::isDirectory($path)){
             File::makeDirectory($path, 0777, true, true);

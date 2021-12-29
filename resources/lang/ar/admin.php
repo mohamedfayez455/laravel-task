@@ -65,7 +65,7 @@ return [
     'user_id_exists' => 'المستخدم غير موجود',
     'do_you_really_want_to_delete_the_article' => 'هل تريد حقًا حذف هذا المقال',
     'delete_posts' =>  'حذف المقال',
-    'cansel' =>  'الغاء',
+    'cancel' =>  'الغاء',
     'remove_file' =>  'حذف الصورة',
     'delete_post' =>  'حذف المقال',
     'please_select_the_posts_you_want_to_delete' => 'من فضلك حدد المقالات التي ترغب فى القيام بحذفها',
@@ -88,7 +88,5 @@ return [
     'attachment_mime' => 'المرفق يجب ان ينتهي ب (jpg - png - jpeg)',
     'attachment_max' => 'حجم المرفق يجب ان لا يتعدي ال 5 ميجا بايت',
     'attachment_image' => 'المرفق يجب ان يكون صورة ',
-
-//    'or' =>  'OR',
 
 ];
